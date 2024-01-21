@@ -176,5 +176,6 @@ FROM (
 WHERE filtered_lookup."LocationID" = joined_table."DOLocationID"
 ORDER BY joined_table.tip_amount DESC;
 ```
-![SQL_Query](data/images/Ques3W6.png)
+![SQL_Query](data/images/Ques6W1.png)
+
 These queries are designed to address specific analytical questions related to taxi trip data, providing insights into trip counts, daily trip distance, fare amounts by borough, and tip amounts for trips originating in Astoria.
