@@ -12,9 +12,9 @@ provider "google" {
   region      = "us-central1"
 }
 
-resource "google_storage_bucket" "auto-expire" {
-  name          = "api-to-bigquery-411507-terraform-bucket"
-  location      = "US"
+resource "google_storage_bucket" "gcp-storage" {
+  name          = var.gcs_bucket_name
+  location = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -28,3 +28,7 @@ resource "google_storage_bucket" "auto-expire" {
   }
 }
 
+resource "google_bigquery_dataset" "bigquery-dataset" {
+  dataset_id = var.bq_dataset_name
+  location = var.location
+}
