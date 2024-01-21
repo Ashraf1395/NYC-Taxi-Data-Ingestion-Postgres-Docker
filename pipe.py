@@ -21,7 +21,7 @@ def main(params):
     host=params.host
     db=params.db_name
     table_name=params.table_name
-    csv_file='data/green_tripdata_2021-01.csv'
+    csv_file='data/taxi+_zone_lookup.csv'
     print(f'Starting chunkwise insertion into postgres database {db} with table_name {table_name} ')
     
     #os.system(f"wget {file_url} -O {csv_file}")
@@ -39,8 +39,8 @@ def main(params):
             df_chunk=next(df_iter)
             i+=1  
             #Converting into datetime format
-            df_chunk.lpep_pickup_datetime=pd.to_datetime(df_chunk.lpep_pickup_datetime)
-            df_chunk.lpep_dropoff_datetime=pd.to_datetime(df_chunk.lpep_dropoff_datetime)
+            #df_chunk.lpep_pickup_datetime=pd.to_datetime(df_chunk.lpep_pickup_datetime)
+            #df_chunk.lpep_dropoff_datetime=pd.to_datetime(df_chunk.lpep_dropoff_datetime)
             
             #Ingesting data into postgres 
             df_chunk.to_sql(name=table_name,con=engine,if_exists='append')

@@ -59,7 +59,7 @@ Running the pipe.py file with arguments
     --password=ashraf \
     --host=localhost \
     --db=nyc_taxi \
-    --table_name=green_taxi_data
+    --table_name=taxi_lookup_data
 
 Creating docker image for the Dockerfile
 
@@ -85,3 +85,52 @@ docker-compose up -d
 
 Stop the container
 docker-compose down
+
+Install terraform 
+
+Install the terraform binary file
+Add it to your system path
+
+export PATH=$PATH:/path/to/terraform
+
+Check it 
+terraform --version
+
+Initialise terraform
+
+teerraform init
+
+Your Architecture setup
+
+terraform plan
+
+Deploying 
+
+terraform apply
+
+Delete
+
+
+terrafrom destroy
+
+Answer
+-1 -rm
+-2 0.42.0
+-3 15612
+-4 2019-09-26
+-5 Brooklyn-Manhattan-Queens
+-6 JFK Airport
+Query for Ques 3 : select count(*) from "green_taxi_data_2019~" as g where DATE(lpep_pickup_datetime) = '2019-09-18' and DATE(lpep_dropoff_datetime) = '2019-09-18';
+
+Query for Ques 4 : select DATE(lpep_pickup_datetime) as day ,sum(trip_distance) as trip_dist from "green_taxi_data_2019~" as g group by DATE(lpep_pickup_datetime) order by sum(trip_distance) desc;
+
+
+
+select t."Borough",sum(g.total_amount) as total_fare,t."Zone",t.service_zone,g.lpep_pickup_datetime,g.lpep_dropoff_datetime,g."DOLocationID",g.trip_distance,g.fare_amount,g.tip_amount,g.total_amount from taxi_lookup as t ,"green_taxi_data_2019~" as g where t."LocationID"= g."PULocationID" and DATE(g.lpep_pickup_datetime)='2019-09-18' group by t."Borough" having sum(g.total_amount)>50000;
+
+Query for ques 5 : 
+select t."Borough",sum(g.total_amount) as total_fare from taxi_lookup as t ,"green_taxi_data_2019~" as g where t."LocationID"= g."PULocationID" and DATE(g.lpep_pickup_datetime)='2019-09-18' group by t."Borough" having sum(g.total_amount)>50000;
+
+
+Query for ques 6:
+select joined_table."pickup_zone",joined_table.tip_amount,filtered_lookup.dropoff_zone from (select t."Zone"as Pickup_Zone,g.lpep_pickup_datetime,g.lpep_dropoff_datetime,g."DOLocationID",t."LocationID",g.tip_amount from "green_taxi_data_2019~" g, taxi_lookup t where g."PULocationID"=t."LocationID" and t."Zone"='Astoria')joined_table , (select "Zone" as Dropoff_Zone,"LocationID" from taxi_lookup )filtered_lookup where filtered_lookup."LocationID"=joined_table."DOLocationID" order by joined_table.tip_amount desc;
