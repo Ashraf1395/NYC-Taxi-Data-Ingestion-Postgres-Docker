@@ -130,6 +130,8 @@ SELECT COUNT(*)
 FROM "green_taxi_data_2019~" AS g
 WHERE DATE(lpep_pickup_datetime) = '2019-09-18' AND DATE(lpep_dropoff_datetime) = '2019-09-18';
 ```
+![SQL_Query](data/images/Ques3W1.png)
+
 
 ### Question 4: Daily Total Trip Distance on September 18, 2019
 
@@ -141,6 +143,7 @@ FROM "green_taxi_data_2019~" AS g
 GROUP BY DATE(lpep_pickup_datetime)
 ORDER BY sum(trip_distance) DESC;
 ```
+![SQL_Query](data/images/Ques4W1.png)
 
 ### Question 5: Total Fare Amount by Borough on September 18, 2019
 
@@ -153,6 +156,7 @@ WHERE t."LocationID" = g."PULocationID" AND DATE(g.lpep_pickup_datetime)='2019-0
 GROUP BY t."Borough"
 HAVING SUM(g.total_amount) > 50000;
 ```
+![SQL_Query](data/images/Ques5W1.png)
 
 ### Question 6: Tip Amounts for Trips Originating in Astoria on September 18, 2019
 
@@ -172,5 +176,5 @@ FROM (
 WHERE filtered_lookup."LocationID" = joined_table."DOLocationID"
 ORDER BY joined_table.tip_amount DESC;
 ```
-
+![SQL_Query](data/images/Ques3W6.png)
 These queries are designed to address specific analytical questions related to taxi trip data, providing insights into trip counts, daily trip distance, fare amounts by borough, and tip amounts for trips originating in Astoria.
