@@ -27,20 +27,11 @@ Creating schema statement
 pg.io.sql.get_schema(df,'green_taxi_data')
 
 
-Creating a pgadmin container
-
-docker run -it \
-    -e PGADMIN_DEFAULT_EMAIL="ashraf@admin.com" \
-    -e PGADMIN_DEFAULT_PASSWORD="ashraf" \
-    -p 8080:80 \
-    --network=postgres-network \
-    --name=pg-admin \
-    dpage/pgadmin4
-
-
 Create network
 
 docker network create postgres-network
+
+Running postgres
 
 docker run -it \
   -e POSTGRES_USER="root" \
@@ -51,3 +42,46 @@ docker run -it \
   --network=postgres-network \
   --name pg-database \
   postgres:13
+
+Creating a pgadmin container
+
+docker run -it \
+    -e PGADMIN_DEFAULT_EMAIL="ashraf@admin.com" \
+    -e PGADMIN_DEFAULT_PASSWORD="ashraf" \
+    -p 8080:80 \
+    --network=postgres-network \
+    --name=pg-admin \
+    dpage/pgadmin4
+
+Running the pipe.py file with arguments
+  python pipe.py \
+    --user=root \
+    --password=ashraf \
+    --host=localhost \
+    --db=nyc_taxi \
+    --table_name=green_taxi_data
+
+Creating docker image for the Dockerfile
+
+docker build -t taxi_data_ingestion:v001 .
+
+docker run -it \
+    --network=postgres-network \
+    --name=ingestion_pipeline \
+    taxi_data_ingestion:v002 \
+        --user=root \
+        --password=ashraf \
+        --host=pgdatabase \
+        --db=nyc_taxi \
+        --table_name=green_taxi_data
+    
+
+Running Docker Compose file
+
+docker-compose up
+
+In detached mode (get your terminal back)
+docker-compose up -d
+
+Stop the container
+docker-compose down

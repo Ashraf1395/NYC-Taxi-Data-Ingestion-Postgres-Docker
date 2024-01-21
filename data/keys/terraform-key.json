@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "api-to-bigquery-411507",
+  "private_key_id": "d6ff61ff6b683a18c8d209cd5ff86ee200668229",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDrUl8sj1hMJCeV\nATTI6Zuaoi/IFQBU/Q1K24PiIBcOR8z1HsUnTy2RIJv5dWWaGkuMaTKNTMkbG+6J\n6eXYsgCfC93PMGSwhH6iAbLSQkvZiNVgk4oIH3TpWw+zneW5iVANSSGVxAps+nXD\nZKF2FK+31jrtcAq78c/llqA+1Bf3W+TCQraYg6Z5LRFQThedsrjJtCeYjnxT0fkN\nUkJdLukMRAH8r58CaXQS/qCi+Ft+wstZJCFynfe2Hu910OenLdZfQ07bRWlHCYWT\nGilSepJRECTg60E6LoTsWxJYgm72P9RpaRZt5wJfK10xt80Xs5kEnFxoQPxpOpWe\nhWjKOa/BAgMBAAECggEAFJ/zl4Q4yPOiRH0Gk1VmPfdZGMA+dzR2pcj3lioZ2zaP\n0CwSO4/E/qNNCGAxt3/2fyf5Nkk0lxurnIrTilqPk2EG39HuAUqbjrd3ZNZKr5Y+\nnWhRAMVBCfLhPWzpZYmTapauSuITx9lr2ORJAoBtpj8wiv728eIPxp+dC+Sq9RL9\nwCzj6GdurRYzFzXc7lv92xD/YHLfpu2pjPonm2PcEbBce0T1W6CSf43xRo+oSJ/r\nhRADER5pxJN1B+9ACwXrM8iZHH4r+Cg8tps2f/Q/zFik2olnxUmL6QZMhBC7fZ1+\nerOq3E2F/Gh8hnXUmAzPh1Xd38bjd82NS4J3eDbEwQKBgQD7kVEKUhb/UVu8GONN\nqVU07zfYOAlfzUfSrh24NayqPcgSFfvBSRfOd6PSV+MgNxSmKTFCGFP+3N5sVO4J\nOwloCg5rnGxfvA8PfKjxN5y+IdzhvYA/z0SnPv078o+jgRFbo63EL08fNB+vlvmT\nYxTqVtxSp+ZFTQ9Uqf/FwYAyqwKBgQDvd8drJdRy5f72fZ073G+C02fgyIf1lOvS\nd0kD2I6/oQFd6X2kpoOlmeisk8bXyoYHA++oZOtb1c9qYCkcAOmuFCVWihxnY5Ih\n/o6VvEJixrZq7gOBHo3S3cIi80Nk2J0s0cI0S8S1zPxOGNr4Mg+550UncyDPadm7\n6oyijt1HQwKBgQD4Czl3zqckSakE1xlQWtVL408R33bGwla+EbX2Ct5b4Zzi0FAy\nLYrOpkKeRNAK1KSEjXsnK2uukUKyWC94ZICK19eOHWbyIjBLWeQOK4JeKm9rGXlZ\n8VlE+qOgNzOPyNQ/oizUkr0WDEPt0xP0Ui6uPMTyruAqlqe2GAS8jWWFDwKBgQDr\nUSgM2brgQbT/Ycbt+Rs3UylEEarRIEtwobmFZvw3wS7Hq1fFQcAiLpEfbYQ7r49v\nO2X5c1p4/y14mhArrZX0c2WRmdx5mLYUY8KXz8zopd7CSyv0aSLy8OoCUEyMv/QM\nBAA0RbSC9nGFCRW8Se18QJCLSK4YRCsrZzxVzdASYwKBgQC++HniDmFUZ2bEZ/PU\nZ5Cwn6+d7WUDCQ1KRn2LWXoAXfT8xmhWXWcDMogc1sOArT7eQWNaxozL7kydYiMw\n82b78roRYe9MtKayMz1npAMyRrDhqeaTl5xaESQf3jnE7bz3QIhBgSfHZlVZD8mC\nM3aY3eGfr1ByyoGzOOD42ckPpQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "terraform-runner@api-to-bigquery-411507.iam.gserviceaccount.com",
+  "client_id": "115023318115888377539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform-runner%40api-to-bigquery-411507.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
